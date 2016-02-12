@@ -10,6 +10,12 @@ module Tenanted
 
     def current_tenant= value
       @@tenant = value
+
+      if postgresql?
+        ActiveRecord::Base.connection.schema_search_path = "tenant_#{@@tenant.id},public"
+      else
+        # TODO implement multi-tenancy for MySQL and SQLite3
+      end
     end
 
     def current_tenant
