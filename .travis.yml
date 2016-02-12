@@ -1,5 +1,19 @@
 language: ruby
+cache: bundler
+sudo: false
+
+env:
+  - DB=postgresql
+  - DB=mysql
+  - DB=sqlite3
+
 rvm:
+  - 2.0.0
   - 2.1.8
   - 2.2.4
   - 2.3.0
+
+before_script:
+  - psql -c 'CREATE DATABASE tenanted_test;' -U postgres
+  - mysql -e 'create database tenanted_test;'
+  - bundle exec rake db:migrate
