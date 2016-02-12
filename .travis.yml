@@ -16,4 +16,3 @@ rvm:
 before_script:
   - psql -c 'CREATE DATABASE tenanted_test;' -U postgres
   - mysql -e 'create database tenanted_test;'
-  - bundle exec rake db:migrate
