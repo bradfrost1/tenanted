@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     tenanted (0.0.1)
-      rails (~> 4.2.5.1)
+      rails (~> 4.2)
 
 GEM
   remote: https://rubygems.org/
@@ -57,8 +57,10 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mysql2 (0.3.20)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -104,7 +106,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sqlite3
+  mysql2 (~> 0.3.0)
+  pg (~> 0.18.0)
+  sqlite3 (~> 1.0)
   tenanted!
 
 BUNDLED WITH
